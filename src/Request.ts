@@ -1,9 +1,5 @@
-/**
- * @module Http.Request
- */
-
 /*
- * @adonisjs/framework
+ * @poppinss/request
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -25,7 +21,18 @@ import { Macroable } from 'macroable'
 import * as cuid from 'cuid'
 import { parse as parseCookie } from '@adonisjs/cookie'
 
-import { RequestContract, RequestConfig } from './RequestContract'
+import { RequestContract } from '@ioc:Adonis/Src/Request'
+
+/**
+ * Config shape
+ */
+export type RequestConfig = {
+  secret?: string,
+  subdomainOffset: number,
+  allowMethodSpoofing: boolean,
+  trustProxy: (address: string, distance: number) => boolean,
+  getIp?: ((request: RequestContract) => string),
+}
 
 /**
  * HTTP Request class exposes the interface to consistently read values

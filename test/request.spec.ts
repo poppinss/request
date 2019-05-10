@@ -1,5 +1,5 @@
 /**
- * @adonisjs/framework
+ * @poppinss/request
  *
  * (c) Harminder Virk <virk@adonisjs.com>
  *
@@ -13,8 +13,7 @@ import { createServer } from 'http'
 import { serialize } from '@adonisjs/cookie'
 import * as proxyaddr from 'proxy-addr'
 
-import { Request } from '../src/Request'
-import { RequestConfig } from '../src/RequestContract'
+import { Request, RequestConfig } from '../src/Request'
 
 const fakeConfig = (conf?: Partial<RequestConfig>) => {
   return Object.assign({
