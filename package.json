@@ -64,7 +64,7 @@
     }
   },
   "np": {
-    "contents": "build",
+    "contents": ".",
     "anyBranch": false
   },
   "dependencies": {
