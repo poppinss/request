@@ -1,7 +1,7 @@
 <img src="./poppinss.jpg" max-width="600px">
 
 # Request
-[![circleci-image]][circleci-url] [![npm-image]][npm-url] ![](https://img.shields.io/badge/Uses-Typescript-294E80.svg?style=flat-square&colorA=ddd)
+[![circleci-image]][circleci-url] [![npm-image]][npm-url] ![](https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript)
 
 Wrapper over Node.js [req](https://nodejs.org/dist/latest/docs/api/http.html#http_class_http_incomingmessage) object to standardize and ease the process of reading data from HTTP requests.
 
@@ -179,8 +179,8 @@ Everyone is welcome to contribute. Please go through the following guides, befor
 
 MIT License, see the included [MIT](LICENSE.md) file.
 
-[circleci-image]: https://img.shields.io/circleci/project/github/poppinss/request/master.svg?style=flat-square&logo=circleci
+[circleci-image]: https://img.shields.io/circleci/project/github/poppinss/request/master.svg?style=for-the-badge&logo=appveyor
 [circleci-url]: https://circleci.com/gh/poppinss/request "circleci"
 
-[npm-image]: https://img.shields.io/npm/v/@poppinss/request.svg?style=flat-square&logo=npm
+[npm-image]: https://img.shields.io/npm/v/@poppinss/request.svg?style=for-the-badge&logo=npm
 [npm-url]: https://npmjs.org/package/@poppinss/request "npm"
