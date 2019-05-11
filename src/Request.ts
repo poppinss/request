@@ -7,6 +7,8 @@
  * file that was distributed with this source code.
  */
 
+/// <reference path="./contracts.ts" />
+
 import { parse, UrlWithStringQuery } from 'url'
 import { ServerResponse, IncomingMessage, IncomingHttpHeaders } from 'http'
 import { omit, pick } from 'lodash'
@@ -20,19 +22,7 @@ import * as fresh from 'fresh'
 import { Macroable } from 'macroable'
 import * as cuid from 'cuid'
 import { parse as parseCookie } from '@adonisjs/cookie'
-
-import { RequestContract } from '@ioc:Adonis/Src/Request'
-
-/**
- * Config shape
- */
-export type RequestConfig = {
-  secret?: string,
-  subdomainOffset: number,
-  allowMethodSpoofing: boolean,
-  trustProxy: (address: string, distance: number) => boolean,
-  getIp?: ((request: RequestContract) => string),
-}
+import { RequestContract, RequestConfigContract } from '@poppinss/request/contracts'
 
 /**
  * HTTP Request class exposes the interface to consistently read values
@@ -100,7 +90,7 @@ export class Request extends Macroable implements RequestContract {
   constructor (
     public request: IncomingMessage,
     public response: ServerResponse,
-    private _config: RequestConfig,
+    private _config: RequestConfigContract,
   ) {
     super()
     this._parseQueryString()

@@ -7,13 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import { MacroableConstructorContract } from 'macroable'
-import { IncomingMessage, ServerResponse } from 'http'
-import { RequestContract } from '@ioc:Adonis/Src/Request'
-import { Request, RequestConfig } from './src/Request'
+/// <reference path="./src/contracts.ts" />
 
-export interface RequestConstructorContract extends MacroableConstructorContract {
-  new (request: IncomingMessage, response: ServerResponse, config: Partial<RequestConfig>): RequestContract
-}
+export {
+  RequestContract,
+  RequestConfigContract,
+  RequestConstructorContract,
+} from '@poppinss/request/contracts'
 
-export { Request, RequestConfig }
+export { Request } from './src/Request'
