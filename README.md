@@ -121,13 +121,13 @@ createServer((req, res) => {
 </table>
 
 ## Typescript support
-The module is written in Typescript and exports following class, types and interfaces.
+The module is written in Typescript and exports following classes, types and interfaces.
 
 ```ts
 import { Request, RequestContract, RequestConfigContract} from '@poppinss/request'
 ```
 
-- **RequestContract** is the interface that `Request` class adheres too. Since, you cannot extend concrete implementations in Typescript, you may need the interface to have a lossely typed flow.
+**RequestContract** is the interface that `Request` class adheres too. Since, you cannot extend concrete implementations in Typescript, you may need the interface to have a lossely typed flow.
 
 ```ts
 Request.macro('cartValue', function () {
@@ -144,7 +144,7 @@ interface RequestContract extends BaseContract {
   cartValue (): number
 }
 
-const request: RequestContract = new Request(req, res, config) as unknown
+const request = new Request(req, res, config) as unknown as RequestContract
 ```
 
 ## API
