@@ -24,6 +24,14 @@ You can access the original [IncomingMessage](https://nodejs.org/api/http.html#h
 
 ### Properties
 
+* [_all](_poppinss_request.request.md#_all)
+* [_body](_poppinss_request.request.md#_body)
+* [_config](_poppinss_request.request.md#_config)
+* [_lazyAccepts](_poppinss_request.request.md#_lazyaccepts)
+* [_original](_poppinss_request.request.md#_original)
+* [_parsedCookies](_poppinss_request.request.md#_parsedcookies)
+* [_qs](_poppinss_request.request.md#_qs)
+* [_raw](_poppinss_request.request.md#_raw)
 * [parsedUrl](_poppinss_request.request.md#parsedurl)
 * [request](_poppinss_request.request.md#request)
 * [response](_poppinss_request.request.md#response)
@@ -32,6 +40,9 @@ You can access the original [IncomingMessage](https://nodejs.org/api/http.html#h
 
 ### Methods
 
+* [_initiateAccepts](_poppinss_request.request.md#_initiateaccepts)
+* [_parseCookies](_poppinss_request.request.md#_parsecookies)
+* [_parseQueryString](_poppinss_request.request.md#_parsequerystring)
 * [accepts](_poppinss_request.request.md#accepts)
 * [ajax](_poppinss_request.request.md#ajax)
 * [all](_poppinss_request.request.md#all)
@@ -107,6 +118,76 @@ ___
 
 ## Properties
 
+<a id="_all"></a>
+
+### `<Private>` _all
+
+**● _all**: *`any`*
+
+A merged copy of `request` body and `querystring`
+
+___
+<a id="_body"></a>
+
+### `<Private>` _body
+
+**● _body**: *`any`*
+
+Request body set using `setBody` method
+
+___
+<a id="_config"></a>
+
+### `<Private>` _config
+
+**● _config**: *`RequestConfigContract`*
+
+___
+<a id="_lazyaccepts"></a>
+
+### `<Private>` _lazyAccepts
+
+**● _lazyAccepts**: *`any`* =  null
+
+Cached copy of `accepts` fn to do content negotiation.
+
+___
+<a id="_original"></a>
+
+### `<Private>` _original
+
+**● _original**: *`any`*
+
+Original merged copy of `request body` and `querystring`. Further mutation to this object are not allowed
+
+___
+<a id="_parsedcookies"></a>
+
+### `<Private>` _parsedCookies
+
+**● _parsedCookies**: *`object` \| `null`* =  null
+
+Copy of lazily parsed signed and plain cookies.
+
+___
+<a id="_qs"></a>
+
+### `<Private>` _qs
+
+**● _qs**: *`any`*
+
+Parsed query string
+
+___
+<a id="_raw"></a>
+
+### `<Private>` _raw
+
+**● _raw**: *`string` \| `null`* =  null
+
+Raw request body as text
+
+___
 <a id="parsedurl"></a>
 
 ###  parsedUrl
@@ -153,6 +234,39 @@ ___
 
 ## Methods
 
+<a id="_initiateaccepts"></a>
+
+### `<Private>` _initiateAccepts
+
+▸ **_initiateAccepts**(): `void`
+
+Lazily initiates the `accepts` module to make sure to parse the request headers only when one of the content-negotiation methods are used.
+
+**Returns:** `void`
+
+___
+<a id="_parsecookies"></a>
+
+### `<Private>` _parseCookies
+
+▸ **_parseCookies**(): `void`
+
+Parse cookies, if not already parsed cookies. Cookies are only parsed, when any of the cookie methods are used.
+
+**Returns:** `void`
+
+___
+<a id="_parsequerystring"></a>
+
+### `<Private>` _parseQueryString
+
+▸ **_parseQueryString**(): `void`
+
+Parses the query string
+
+**Returns:** `void`
+
+___
 <a id="accepts"></a>
 
 ###  accepts
