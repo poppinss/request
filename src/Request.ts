@@ -14,6 +14,7 @@
 /// <reference path="./contracts.ts" />
 
 import { parse, UrlWithStringQuery } from 'url'
+import { DeepReadonly } from 'ts-essentials'
 import { ServerResponse, IncomingMessage, IncomingHttpHeaders } from 'http'
 import { omit, pick } from 'lodash'
 import * as getValue from 'get-value'
@@ -94,7 +95,7 @@ export class Request extends Macroable implements RequestContract {
   constructor (
     public request: IncomingMessage,
     public response: ServerResponse,
-    private _config: RequestConfigContract,
+    private _config: DeepReadonly<RequestConfigContract>,
   ) {
     super()
     this._parseQueryString()
