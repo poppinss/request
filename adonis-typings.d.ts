@@ -10,7 +10,8 @@
 declare module '@ioc:Adonis/Src/Request' {
   /// <reference path="./src/contracts.ts" />
   import { RequestConstructorContract, RequestContract as BaseContract } from '@poppinss/request/contracts'
-
   interface RequestContract extends BaseContract {}
+
   const Request: RequestConstructorContract
+  export default Request
 }
