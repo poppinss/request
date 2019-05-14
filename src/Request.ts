@@ -25,7 +25,7 @@ import * as accepts from 'accepts'
 import * as fresh from 'fresh'
 import { Macroable } from 'macroable'
 import * as cuid from 'cuid'
-import { parse as parseCookie } from '@adonisjs/cookie'
+import { parse as parseCookie } from '@poppinss/cookie'
 import { RequestContract, RequestConfigContract } from '@poppinss/request/contracts'
 
 /**

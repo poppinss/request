@@ -12,7 +12,7 @@
 import * as test from 'japa'
 import * as supertest from 'supertest'
 import { createServer } from 'http'
-import { serialize } from '@adonisjs/cookie'
+import { serialize } from '@poppinss/cookie'
 import * as proxyaddr from 'proxy-addr'
 import { Request } from '../src/Request'
 import { RequestConfigContract } from '@poppinss/request/contracts'

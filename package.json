@@ -72,7 +72,7 @@
     "anyBranch": false
   },
   "dependencies": {
-    "@adonisjs/cookie": "^1.1.0",
+    "@poppinss/cookie": "^1.0.0",
     "accepts": "^1.3.7",
     "cuid": "^2.1.6",
     "fresh": "^0.5.2",
