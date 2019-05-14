@@ -1,6 +1,6 @@
 {
   "name": "@poppinss/request",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node.js http request wrapper used by AdonisJs",
   "main": "build/index.js",
   "files": [
