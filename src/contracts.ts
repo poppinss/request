@@ -1,6 +1,14 @@
+/*
+* @poppinss/request
+*
+* (c) Harminder Virk <virk@adonisjs.com>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
 declare module '@poppinss/request/contracts' {
   import { UrlWithStringQuery } from 'url'
-  import { MacroableConstructorContract } from 'macroable'
   import { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'http'
 
   interface RequestContract {
@@ -58,13 +66,5 @@ declare module '@poppinss/request/contracts' {
     allowMethodSpoofing: boolean,
     trustProxy: (address: string, distance: number) => boolean,
     getIp?: ((request: RequestContract) => string),
-  }
-
-  interface RequestConstructorContract extends MacroableConstructorContract {
-    new (
-      request: IncomingMessage,
-      response: ServerResponse,
-      config: Partial<RequestConfigContract>,
-    ): RequestContract
   }
 }
