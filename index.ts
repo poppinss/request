@@ -9,10 +9,5 @@
 
 /// <reference path="./src/contracts.ts" />
 
-export {
-  RequestContract,
-  RequestConfigContract,
-  RequestConstructorContract,
-} from '@poppinss/request/contracts'
-
+export { RequestContract, RequestConfigContract } from '@poppinss/request/contracts'
 export { Request } from './src/Request'
