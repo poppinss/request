@@ -4,7 +4,7 @@
   "description": "Node.js http request wrapper used by AdonisJs",
   "main": "build/index.js",
   "files": [
-    "build/adonis-typings.d.ts",
+    "build/adonis-typings/index.d.ts",
     "build/src",
     "build/index.js",
     "build/index.d.ts"

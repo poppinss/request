@@ -7,21 +7,15 @@
 * file that was distributed with this source code.
 */
 
-/// <reference path="./src/contracts.ts" />
+/// <reference path="../src/contracts.ts" />
 
 declare module '@ioc:Adonis/Src/Request' {
   import { MacroableConstructorContract } from 'macroable'
   import { RequestContract as BaseContract, RequestConfigContract } from '@poppinss/request/contracts'
   import { IncomingMessage, ServerResponse } from 'http'
 
-  interface RequestContract extends BaseContract {}
-  interface RequestConstructorContract extends MacroableConstructorContract {
-    new (
-      request: IncomingMessage,
-      response: ServerResponse,
-      config: RequestConfigContract,
-    ): RequestContract
-  }
+  export interface RequestContract extends BaseContract {}
+  export interface RequestConstructorContract extends MacroableConstructorContract {}
 
   const Request: RequestConstructorContract
   export default Request
