@@ -10,12 +10,18 @@
 /// <reference path="../src/contracts.ts" />
 
 declare module '@ioc:Adonis/Src/Request' {
-  import { MacroableConstructorContract } from 'macroable'
-  import { RequestContract as BaseContract, RequestConfigContract } from '@poppinss/request/contracts'
   import { IncomingMessage, ServerResponse } from 'http'
+  import { MacroableConstructorContract } from 'macroable'
+  import {
+    RequestContract as BaseContract,
+    RequestConfigContract as BaseConfig,
+  } from '@poppinss/request/contracts'
 
   export interface RequestContract extends BaseContract {}
   export interface RequestConstructorContract extends MacroableConstructorContract {}
+
+  type RequestConfigContract = Pick<BaseConfig, Exclude<keyof BaseConfig, 'secret'>>
+  export { RequestConfigContract }
 
   const Request: RequestConstructorContract
   export default Request
