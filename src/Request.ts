@@ -27,7 +27,7 @@ import * as fresh from 'fresh'
 import { Macroable } from 'macroable'
 import * as cuid from 'cuid'
 import { parse as parseCookie } from '@poppinss/cookie'
-import { RequestContract, RequestConfigContract } from '@poppinss/request/contracts'
+import { RequestContract, RequestConfigContract } from './contracts'
 
 /**
  * HTTP Request class exposes the interface to consistently read values
