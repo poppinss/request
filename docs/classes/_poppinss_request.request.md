@@ -14,7 +14,7 @@ You can access the original [IncomingMessage](https://nodejs.org/api/http.html#h
 
 ## Implements
 
-* `RequestContract`
+* [RequestContract](../interfaces/_poppinss_request.requestcontract.md)
 
 ## Index
 
@@ -91,7 +91,7 @@ You can access the original [IncomingMessage](https://nodejs.org/api/http.html#h
 
 ###  constructor
 
-⊕ **new Request**(request: *`IncomingMessage`*, response: *`ServerResponse`*, _config: *`DeepReadonly`<`RequestConfigContract`>*): [Request](_poppinss_request.request.md)
+⊕ **new Request**(request: *`IncomingMessage`*, response: *`ServerResponse`*, _config: *`DeepReadonly`<[RequestConfigContract](../modules/_poppinss_request.md#requestconfigcontract)>*): [Request](_poppinss_request.request.md)
 
 **Parameters:**
 
@@ -99,7 +99,7 @@ You can access the original [IncomingMessage](https://nodejs.org/api/http.html#h
 | ------ | ------ |
 | request | `IncomingMessage` |
 | response | `ServerResponse` |
-| _config | `DeepReadonly`<`RequestConfigContract`> |
+| _config | `DeepReadonly`<[RequestConfigContract](../modules/_poppinss_request.md#requestconfigcontract)> |
 
 **Returns:** [Request](_poppinss_request.request.md)
 
