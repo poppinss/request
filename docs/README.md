@@ -1,11 +1,10 @@
+> **[@poppinss/request](README.md)**
 
-#  @poppinss/request
+[Globals](README.md) /
 
 ## Index
 
 ### External modules
 
-* [@poppinss/request](modules/_poppinss_request.md)
-
----
-
+* ["Request"](modules/_request_.md)
+* ["contracts"](modules/_contracts_.md)
