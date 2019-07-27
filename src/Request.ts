@@ -49,23 +49,23 @@ export class Request extends Macroable implements RequestContract {
   /**
    * Request body set using `setBody` method
    */
-  private _body: any = {}
+  private _body: object = {}
 
   /**
    * A merged copy of `request` body and `querystring`
    */
-  private _all: any = {}
+  private _all: object = {}
 
   /**
    * Original merged copy of `request body` and `querystring`.
    * Further mutation to this object are not allowed
    */
-  private _original: any = {}
+  private _original: object = {}
 
   /**
    * Parsed query string
    */
-  private _qs: any = {}
+  private _qs: object = {}
 
   /**
    * Raw request body as text
@@ -152,7 +152,7 @@ export class Request extends Macroable implements RequestContract {
    * This method is supposed to be invoked by the body parser and must be called only
    * once. For further mutations make use of `updateBody` method.
    */
-  public setInitialBody (body) {
+  public setInitialBody (body: object) {
     if (this._original && Object.isFrozen(this._original)) {
       throw new Error('Cannot re-set initial body. Use request.updateBody instead')
     }
@@ -170,7 +170,7 @@ export class Request extends Macroable implements RequestContract {
    * will be re-computed by merging the query string and request
    * body.
    */
-  public updateBody (body) {
+  public updateBody (body: object) {
     this._body = body
     this._all = { ...this._body, ...this._qs }
   }
@@ -187,7 +187,7 @@ export class Request extends Macroable implements RequestContract {
    * Update the query string with the new data object. The `all` property
    * will be re-computed by merging the query and the request body.
    */
-  public updateQs (data) {
+  public updateQs (data: object) {
     this._qs = data
     this._all = { ...this._body, ...this._qs }
   }
