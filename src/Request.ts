@@ -534,7 +534,9 @@ export class Request extends Macroable implements RequestContract {
    */
   public url (includeQueryString?: boolean): string {
     const pathname = this.parsedUrl.pathname!
-    return includeQueryString ? `${pathname}?${this.parsedUrl.query}` : pathname
+    return includeQueryString && this.parsedUrl.query
+      ? `${pathname}?${this.parsedUrl.query}`
+      : pathname
   }
 
   /**

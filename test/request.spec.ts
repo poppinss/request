@@ -906,4 +906,17 @@ test.group('Request', () => {
     const { body } = await supertest(server).get('/')
     assert.notExists(body.id)
   })
+
+  test('do not append ? when query string is empty', async (assert) => {
+    const server = createServer((req, res) => {
+      const request = new Request(req, res, fakeConfig())
+      res.writeHead(200, { 'content-type': 'application/json' })
+      res.end(JSON.stringify({ url: request.url(true) }))
+    })
+
+    const { body } = await supertest(server).get('/')
+    assert.deepEqual(body, {
+      url: '/',
+    })
+  })
 })
