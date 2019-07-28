@@ -516,14 +516,14 @@ ___
 
 ###  id
 
-▸ **id**(): *string*
+▸ **id**(): *string | undefined*
 
 *Implementation of [RequestContract](../interfaces/_contracts_.requestcontract.md)*
 
 Returns the request id from the `x-request-id` header. The
 header is untoched, if it already exists.
 
-**Returns:** *string*
+**Returns:** *string | undefined*
 
 ___
 

@@ -276,9 +276,9 @@ ___
 
 ###  id
 
-▸ **id**(): *string*
+▸ **id**(): *string | undefined*
 
-**Returns:** *string*
+**Returns:** *string | undefined*
 
 ___
 
