@@ -20,6 +20,7 @@ const fakeConfig = (conf?: Partial<RequestConfigContract>) => {
     allowMethodSpoofing: false,
     trustProxy: proxyaddr.compile('loopback'),
     subdomainOffset: 2,
+    generateRequestId: true,
     secret: Math.random().toFixed(36).substring(2, 38),
   }, conf)
 }
@@ -889,5 +890,20 @@ test.group('Request', () => {
 
     assert.equal(body.id, body.header)
     assert.equal(body.id, body.reComputed)
+  })
+
+  test('do not generate request id when generateRequestId is false', async (assert) => {
+    const server = createServer((req, res) => {
+      const request = new Request(req, res, Object.assign(fakeConfig(), {
+        generateRequestId: false,
+      }))
+      res.writeHead(200, { 'content-type': 'application/json' })
+      res.end(JSON.stringify({
+        id: request.id(),
+      }))
+    })
+
+    const { body } = await supertest(server).get('/')
+    assert.notExists(body.id)
   })
 })

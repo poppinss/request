@@ -134,9 +134,9 @@ export class Request extends Macroable implements RequestContract {
    * Returns the request id from the `x-request-id` header. The
    * header is untoched, if it already exists.
    */
-  public id (): string {
+  public id (): string | undefined {
     let requestId = this.header('x-request-id')
-    if (!requestId) {
+    if (!requestId && this._config.generateRequestId) {
       requestId = cuid()
       this.request.headers['x-request-id'] = requestId
     }

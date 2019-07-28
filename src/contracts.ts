@@ -18,7 +18,7 @@ export interface RequestContract {
   parsedUrl: UrlWithStringQuery
   request: IncomingMessage
   response: ServerResponse
-  id (): string
+  id (): string | undefined,
   setInitialBody (body: any): void
   updateBody (body: any): void
   updateRawBody (body: string): void
@@ -66,7 +66,8 @@ export interface RequestContract {
 export type RequestConfigContract = {
   secret?: string,
   subdomainOffset: number,
+  generateRequestId: boolean,
   allowMethodSpoofing: boolean,
-  trustProxy: (address: string, distance: number) => boolean,
   getIp?: ((request: RequestContract) => string),
+  trustProxy: (address: string, distance: number) => boolean,
 }
