@@ -7,11 +7,12 @@
  * file that was distributed with this source code.
  */
 
-import * as test from 'japa'
-import * as supertest from 'supertest'
+import test from 'japa'
+import supertest from 'supertest'
+import proxyaddr from 'proxy-addr'
 import { createServer } from 'http'
 import { serialize } from '@poppinss/cookie'
-import * as proxyaddr from 'proxy-addr'
+
 import { Request } from '../src/Request'
 import { RequestConfigContract } from '../src/contracts'
 
@@ -389,7 +390,7 @@ test.group('Request', () => {
       res.end(JSON.stringify({ pjax: request.pjax() }))
     })
 
-    const { body } = await supertest(server).get('/').set('X-Pjax', true)
+    const { body } = await supertest(server).get('/').set('X-Pjax', 'true')
     assert.deepEqual(body, {
       pjax: true,
     })
@@ -787,7 +788,7 @@ test.group('Request', () => {
       res.end(JSON.stringify({ plainCookies: request.plainCookies(), cookies: request.cookies() }))
     })
 
-    const cookies = serialize('name', 'virk')
+    const cookies = serialize('name', 'virk')!
     const { body } = await supertest(server).get('/').set('cookie', cookies)
     assert.deepEqual(body, {
       plainCookies: {
@@ -806,7 +807,7 @@ test.group('Request', () => {
       res.end(JSON.stringify({ plainCookies: request.plainCookies(), cookies: request.cookies() }))
     })
 
-    const cookies = serialize('name', 'virk', config.secret)
+    const cookies = serialize('name', 'virk', config.secret)!
     const { body } = await supertest(server).get('/').set('cookie', cookies)
     assert.deepEqual(body, {
       plainCookies: {},
@@ -825,7 +826,7 @@ test.group('Request', () => {
       res.end(JSON.stringify({ name: request.cookie('name') }))
     })
 
-    const cookies = serialize('name', 'virk', config.secret)
+    const cookies = serialize('name', 'virk', config.secret)!
     const { body } = await supertest(server).get('/').set('cookie', cookies)
     assert.deepEqual(body, {
       name: 'virk',
@@ -852,7 +853,7 @@ test.group('Request', () => {
       res.end(JSON.stringify({ name: request.plainCookie('name') }))
     })
 
-    const cookies = serialize('name', 'virk')
+    const cookies = serialize('name', 'virk')!
     const { body } = await supertest(server).get('/').set('cookie', cookies)
     assert.deepEqual(body, {
       name: 'virk',

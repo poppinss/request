@@ -16,16 +16,15 @@
 import { parse, UrlWithStringQuery } from 'url'
 import { DeepReadonly } from 'ts-essentials'
 import { ServerResponse, IncomingMessage, IncomingHttpHeaders } from 'http'
-import { omit, pick } from 'lodash'
-import * as getValue from 'get-value'
-import * as qs from 'qs'
-import * as proxyaddr from 'proxy-addr'
+import { omit, pick, get } from 'lodash'
+import qs from 'qs'
+import proxyaddr from 'proxy-addr'
 import { isIP } from 'net'
-import * as typeIs from 'type-is'
-import * as accepts from 'accepts'
-import * as fresh from 'fresh'
+import typeIs from 'type-is'
+import accepts from 'accepts'
+import fresh from 'fresh'
 import { Macroable } from 'macroable'
-import * as cuid from 'cuid'
+import cuid from 'cuid'
 import { parse as parseCookie } from '@poppinss/cookie'
 import { RequestContract, RequestConfigContract } from './contracts'
 
@@ -245,7 +244,7 @@ export class Request extends Macroable implements RequestContract {
    * ```
    */
   public input (key: string, defaultValue?: any): any {
-    return getValue(this._all, key, { default: defaultValue })
+    return get(this._all, key, defaultValue)
   }
 
   /**
@@ -794,7 +793,7 @@ export class Request extends Macroable implements RequestContract {
    */
   public cookie (key: string, defaultValue?: string): any {
     this._parseCookies()
-    return getValue(this._parsedCookies!.signedCookies, key, { default: defaultValue })
+    return get(this._parsedCookies!.signedCookies, key, defaultValue)
   }
 
   /**
@@ -813,6 +812,6 @@ export class Request extends Macroable implements RequestContract {
    */
   public plainCookie (key: string, defaultValue?: string): any {
     this._parseCookies()
-    return getValue(this._parsedCookies!.plainCookies, key, { default: defaultValue })
+    return get(this._parsedCookies!.plainCookies, key, defaultValue)
   }
 }
