@@ -2,7 +2,7 @@
  * @module @poppinss/request
  */
 
-/**
+/*
  * @poppinss/request
  *
  * (c) Harminder Virk <virk@adonisjs.com>

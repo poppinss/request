@@ -1,6 +1,6 @@
-> **[@poppinss/request](../README.md)**
+**[@poppinss/request](../README.md)**
 
-[Globals](../README.md) / ["contracts"](_contracts_.md) /
+[Globals](../README.md) › ["contracts"](_contracts_.md)
 
 # External module: "contracts"
 

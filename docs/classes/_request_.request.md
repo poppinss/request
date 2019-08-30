@@ -1,6 +1,6 @@
-> **[@poppinss/request](../README.md)**
+**[@poppinss/request](../README.md)**
 
-[Globals](../README.md) / ["Request"](../modules/_request_.md) / [Request](_request_.request.md) /
+[Globals](../README.md) › ["Request"](../modules/_request_.md) › [Request](_request_.request.md)
 
 # Class: Request
 
@@ -14,7 +14,7 @@ using `request.request` property.
 
 ## Hierarchy
 
-* `Macroable`
+* Macroable
 
   * **Request**
 
@@ -93,15 +93,15 @@ using `request.request` property.
 
 ###  constructor
 
-\+ **new Request**(`request`: `IncomingMessage`, `response`: `ServerResponse`, `_config`: `DeepReadonly<RequestConfigContract>`): *[Request](_request_.request.md)*
+\+ **new Request**(`request`: IncomingMessage, `response`: ServerResponse, `_config`: DeepReadonly‹[RequestConfigContract](../modules/_contracts_.md#requestconfigcontract)›): *[Request](_request_.request.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`request` | `IncomingMessage` |
-`response` | `ServerResponse` |
-`_config` | `DeepReadonly<RequestConfigContract>` |
+`request` | IncomingMessage |
+`response` | ServerResponse |
+`_config` | DeepReadonly‹[RequestConfigContract](../modules/_contracts_.md#requestconfigcontract)› |
 
 **Returns:** *[Request](_request_.request.md)*
 
@@ -109,7 +109,7 @@ Name | Type |
 
 ###  parsedUrl
 
-• **parsedUrl**: *`UrlWithStringQuery`* =  parse(this.request.url!, false)
+• **parsedUrl**: *UrlWithStringQuery* =  parse(this.request.url!, false)
 
 *Implementation of [RequestContract](../interfaces/_contracts_.requestcontract.md).[parsedUrl](../interfaces/_contracts_.requestcontract.md#parsedurl)*
 
@@ -121,7 +121,7 @@ ___
 
 ###  request
 
-• **request**: *`IncomingMessage`*
+• **request**: *IncomingMessage*
 
 *Implementation of [RequestContract](../interfaces/_contracts_.requestcontract.md).[request](../interfaces/_contracts_.requestcontract.md#request)*
 
@@ -129,7 +129,7 @@ ___
 
 ###  response
 
-• **response**: *`ServerResponse`*
+• **response**: *ServerResponse*
 
 *Implementation of [RequestContract](../interfaces/_contracts_.requestcontract.md).[response](../interfaces/_contracts_.requestcontract.md#response)*
 
@@ -217,7 +217,7 @@ and query string
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -327,7 +327,7 @@ that their value isn't tampered.
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -392,7 +392,7 @@ Name | Type |
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -440,7 +440,7 @@ Returns reference to the query string object
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -478,13 +478,13 @@ ___
 
 ###  headers
 
-▸ **headers**(): *`IncomingHttpHeaders`*
+▸ **headers**(): *IncomingHttpHeaders*
 
 *Implementation of [RequestContract](../interfaces/_contracts_.requestcontract.md)*
 
 Returns a copy of headers as an object
 
-**Returns:** *`IncomingHttpHeaders`*
+**Returns:** *IncomingHttpHeaders*
 
 ___
 
@@ -761,7 +761,7 @@ ___
 
 ###  only
 
-▸ **only**<**T**, **U**>(`keys`: `T`[]): *`U`*
+▸ **only**<**T**, **U**>(`keys`: T[]): *U*
 
 *Implementation of [RequestContract](../interfaces/_contracts_.requestcontract.md)*
 
@@ -782,9 +782,9 @@ request.only(['username', 'age'])
 
 Name | Type |
 ------ | ------ |
-`keys` | `T`[] |
+`keys` | T[] |
 
-**Returns:** *`U`*
+**Returns:** *U*
 
 ___
 
@@ -799,7 +799,7 @@ query string and body
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -846,7 +846,7 @@ when cookie is set by the client and not the server
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -860,7 +860,7 @@ Returns reference to the request body
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -1068,7 +1068,7 @@ ___
 
 ### `Static` getGetter
 
-▸ **getGetter**(`name`: string): *`MacroableFn` | undefined*
+▸ **getGetter**(`name`: string): *MacroableFn | undefined*
 
 *Inherited from void*
 
@@ -1078,13 +1078,13 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 
-**Returns:** *`MacroableFn` | undefined*
+**Returns:** *MacroableFn | undefined*
 
 ___
 
 ### `Static` getMacro
 
-▸ **getMacro**(`name`: string): *`MacroableFn` | undefined*
+▸ **getMacro**(`name`: string): *MacroableFn | undefined*
 
 *Inherited from void*
 
@@ -1094,13 +1094,13 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 
-**Returns:** *`MacroableFn` | undefined*
+**Returns:** *MacroableFn | undefined*
 
 ___
 
 ### `Static` getter
 
-▸ **getter**(`name`: string, `callback`: `MacroableFn`, `singleton?`: undefined | false | true): *void*
+▸ **getter**(`name`: string, `callback`: MacroableFn, `singleton?`: undefined | false | true): *void*
 
 *Inherited from void*
 
@@ -1109,7 +1109,7 @@ ___
 Name | Type |
 ------ | ------ |
 `name` | string |
-`callback` | `MacroableFn` |
+`callback` | MacroableFn |
 `singleton?` | undefined \| false \| true |
 
 **Returns:** *void*
@@ -1160,7 +1160,7 @@ ___
 
 ### `Static` macro
 
-▸ **macro**(`name`: string, `callback`: `MacroableFn`): *void*
+▸ **macro**(`name`: string, `callback`: MacroableFn): *void*
 
 *Inherited from void*
 
@@ -1169,6 +1169,6 @@ ___
 Name | Type |
 ------ | ------ |
 `name` | string |
-`callback` | `MacroableFn` |
+`callback` | MacroableFn |
 
 **Returns:** *void*

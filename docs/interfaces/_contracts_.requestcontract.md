@@ -1,6 +1,6 @@
-> **[@poppinss/request](../README.md)**
+**[@poppinss/request](../README.md)**
 
-[Globals](../README.md) / ["contracts"](../modules/_contracts_.md) / [RequestContract](_contracts_.requestcontract.md) /
+[Globals](../README.md) › ["contracts"](../modules/_contracts_.md) › [RequestContract](_contracts_.requestcontract.md)
 
 # Interface: RequestContract
 
@@ -70,19 +70,19 @@
 
 ###  parsedUrl
 
-• **parsedUrl**: *`UrlWithStringQuery`*
+• **parsedUrl**: *UrlWithStringQuery*
 
 ___
 
 ###  request
 
-• **request**: *`IncomingMessage`*
+• **request**: *IncomingMessage*
 
 ___
 
 ###  response
 
-• **response**: *`ServerResponse`*
+• **response**: *ServerResponse*
 
 ## Methods
 
@@ -114,7 +114,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -213,7 +213,7 @@ Name | Type |
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -260,9 +260,9 @@ ___
 
 ###  headers
 
-▸ **headers**(): *`IncomingHttpHeaders`*
+▸ **headers**(): *IncomingHttpHeaders*
 
-**Returns:** *`IncomingHttpHeaders`*
+**Returns:** *IncomingHttpHeaders*
 
 ___
 
@@ -367,7 +367,7 @@ ___
 
 ###  only
 
-▸ **only**<**T**, **U**>(`keys`: `T`[]): *`U`*
+▸ **only**<**T**, **U**>(`keys`: T[]): *U*
 
 **Type parameters:**
 
@@ -379,9 +379,9 @@ ___
 
 Name | Type |
 ------ | ------ |
-`keys` | `T`[] |
+`keys` | T[] |
 
-**Returns:** *`U`*
+**Returns:** *U*
 
 ___
 
@@ -391,7 +391,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -424,7 +424,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 
@@ -434,7 +434,7 @@ ___
 
 **Returns:** *object*
 
-● \[▪ **key**: *string*\]: any
+* \[ **key**: *string*\]: any
 
 ___
 

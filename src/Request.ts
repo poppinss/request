@@ -11,21 +11,20 @@
  * file that was distributed with this source code.
  */
 
-/// <reference path="./contracts.ts" />
-
-import { parse, UrlWithStringQuery } from 'url'
-import { DeepReadonly } from 'ts-essentials'
-import { ServerResponse, IncomingMessage, IncomingHttpHeaders } from 'http'
-import { omit, pick, get } from 'lodash'
 import qs from 'qs'
-import proxyaddr from 'proxy-addr'
+import cuid from 'cuid'
+import fresh from 'fresh'
 import { isIP } from 'net'
 import typeIs from 'type-is'
 import accepts from 'accepts'
-import fresh from 'fresh'
+import proxyaddr from 'proxy-addr'
 import { Macroable } from 'macroable'
-import cuid from 'cuid'
+import { omit, pick, get } from 'lodash'
+import { DeepReadonly } from 'ts-essentials'
+import { parse, UrlWithStringQuery } from 'url'
 import { parse as parseCookie } from '@poppinss/cookie'
+import { ServerResponse, IncomingMessage, IncomingHttpHeaders } from 'http'
+
 import { RequestContract, RequestConfigContract } from './contracts'
 
 /**
