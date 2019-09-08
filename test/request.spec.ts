@@ -11,10 +11,15 @@ import test from 'japa'
 import supertest from 'supertest'
 import proxyaddr from 'proxy-addr'
 import { createServer } from 'http'
+import { createServer as createSecureServer } from 'https'
 import { serialize } from '@poppinss/cookie'
+import { createCertificate, CertificateCreationOptions, CertificateCreationResult } from 'pem'
 
 import { Request } from '../src/Request'
 import { RequestConfigContract } from '../src/contracts'
+import { promisify } from 'util'
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 const fakeConfig = (conf?: Partial<RequestConfigContract>) => {
   return Object.assign({
@@ -25,6 +30,8 @@ const fakeConfig = (conf?: Partial<RequestConfigContract>) => {
     secret: Math.random().toFixed(36).substring(2, 38),
   }, conf)
 }
+
+const createCertificatePromise = promisify<CertificateCreationOptions, CertificateCreationResult>(createCertificate)
 
 test.group('Request', () => {
   test('get http request query string', async (assert) => {
@@ -299,7 +306,23 @@ test.group('Request', () => {
     })
   })
 
-  test('get boolean telling request is secure or not', async (assert) => {
+  test('get request protocol without trusting proxy', async (assert) => {
+    const server = createServer((req, res) => {
+      const config = fakeConfig()
+      config.trustProxy = () => false
+      const request = new Request(req, res, config)
+
+        res.writeHead(200, { 'content-type': 'application/json' })
+        res.end(JSON.stringify({ protocol: request.protocol() }))
+      })
+
+      const { body } = await supertest(server).get('/')
+      assert.deepEqual(body, {
+        protocol: 'http',
+      })
+  })
+
+  test('get boolean telling request is secure (when false)', async (assert) => {
     const server = createServer((req, res) => {
       const request = new Request(req, res, fakeConfig())
 
@@ -310,6 +333,24 @@ test.group('Request', () => {
     const { body } = await supertest(server).get('/')
     assert.deepEqual(body, {
       secure: false,
+    })
+  })
+
+  test('get boolean telling request is secure (when true)', async (assert) => {
+    const keys = await createCertificatePromise({ days: 1, selfSigned: true })
+    const server = createSecureServer({
+      key: keys.serviceKey,
+      cert: keys.certificate,
+    }, (req, res) => {
+      const request = new Request(req, res, fakeConfig())
+
+      res.writeHead(200, { 'content-type': 'application/json' })
+      res.end(JSON.stringify({ secure: request.secure() }))
+    })
+
+    const { body } = await supertest(server).get('/')
+    assert.deepEqual(body, {
+      secure: true,
     })
   })
 
